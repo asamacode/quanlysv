@@ -9,7 +9,8 @@ var addRouter = require('./routes/add');
 var deleteRouter = require('./routes/detele');
 var updateRouter = require('./routes/update');
 var searchRouter = require('./routes/search');
-var db = 'mongodb://localhost:27017/mydb';
+var db = "mongodb://asama:12345678a@cluster0-shard-00-00-oszst.mongodb.net:27017,cluster0-shard-00-01-oszst.mongodb.net:27017" +
+    ",cluster0-shard-00-02-oszst.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
 
 var app = express();
 mongoDB.connect(db,{ useNewUrlParser: true });
