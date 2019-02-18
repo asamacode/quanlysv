@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <title>Quản Lý Sinh Viên - A Sama</title>
+</head>
+<body>
+<form method="get" action="/search">
+    <div class="pure-control-group" align="center">
+        <label for="serach">Tìm kiếm</label><br>
+        <input name="q" type="text" placeholder="Tìm kiếm" value="">
+        <button class="pure-button pure-button-primary"
+                type="submit">Tìm kiếm</button>
+    </div>
+</form>
+
+<table class="pure-table pure-table-horizontal" align="center">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Birthday</th>
+        <th>Action</th>
+        <th></th>
+    </tr>
+    </thead>
+    <% if (list.length > 0) { %>
+        <% list.forEach(function (item) { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.name %></td>
+                <td><%= item.class %></td>
+                <td><%= item.birthday %></td>
+                <td><a class="pure-button pure-button-primary"
+                       href="/update/<%= item.id %>">Sửa</a> </td>
+                <td><a class="button-warning pure-button" onclick="return confirm('Bạn có muốn xóa?')"
+                       href="/delete/<%= item.id %>">Xóa</a> </td>
+
+            </tr>
+    <% })}else { %>
+        <td>Danh sách tìm kiếm đang trống !<td>
+        <% };%>
+</table>
+</body>
+</html>
