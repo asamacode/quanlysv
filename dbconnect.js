@@ -13,10 +13,7 @@ var database = {
         });
         sv.save(function (err,sinhvien) {
             if (err) {
-                res.send({
-                    type: "POST",
-                    resu: "Thêm Thất bại"
-                });
+                res.render("add",{resu: "Thêm Thất Bại"});
                 console.log("That bai");
             } else {
                 res.render("add",{resu: "Thêm Thành Công"});
