@@ -6,4 +6,4 @@
 => Xóa
 => Tìm kiếm
 # sử dụng Mongoose, EJS
-# copyrights 2019 - A Sama
+# Copyright 2019 - A Sama
