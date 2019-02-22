@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const SinhVien = require("./models/sinhvien");
 
+
 var database = {
     //them sinh vien
     addNewStudent: function (res,req) {
         var sv = new SinhVien({
-         id : req.body.svid,
          name : req.body.svname,
          class : req.body.svclass,
          birthday : req.body.svbirthday

@@ -8,10 +8,6 @@
 <form class="pure-form pure-form-aligned" method="post" action="/add" align="center">
     <fieldset>
         <legend>THÊM SINH VIÊN</legend>
-        <div class="pure-control-group">
-            <label for="name">ID</label>
-            <input name="svid" type="text" placeholder="Id">
-        </div>
 
         <div class="pure-control-group">
             <label for="password">NAME</label>
@@ -25,7 +21,7 @@
 
         <div class="pure-control-group">
             <label for="foo">BIRTHDAY</label>
-            <input name="svbirthday" type="text" placeholder="Ngày sinh">
+            <input name="svbirthday" type="date" placeholder="Ngày sinh">
         </div>
         <div class="pure-controls">
             <% if (resu != null) { %>

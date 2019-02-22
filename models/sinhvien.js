@@ -1,14 +1,9 @@
 var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+var AutoIncrement = require('mongoose-sequence')(mongoose);
 
 //tao SinhVien va Schema
 const SVSchema = new Schema( {
-    id : {
-        type: String,
-        index: true,
-        unique: true,
-        required : [true,'id field is required']
-    },
     name : {
         type : String,
         required : [true,' field is required']
@@ -23,5 +18,6 @@ const SVSchema = new Schema( {
     },
     versionKey: false
 });
+    SVSchema.plugin(AutoIncrement, {id:'id_seq',inc_field: 'id'});
     var SinhVien = mongoose.model("SinhVien",SVSchema);
     module.exports = SinhVien;
